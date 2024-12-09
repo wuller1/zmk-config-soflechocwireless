@@ -81,11 +81,11 @@
 
         vim_layer {
             bindings = <
-&bt BT_CLR      &bt BT_SEL 0      &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &none  &none  &none  &none  &none              &none
-&kp TAB         &none             &none         &none         &none         &none                         &none  &none  &none  &none  &none              &none
-&kp ESC         &kp LEFT_CONTROL  &none         &none         &none         &none                         &none  &none  &none  &none  &kp RIGHT_CONTROL  &none
-&kp LEFT_SHIFT  &none             &none         &none         &none         &none         &none    &none  &none  &none  &none  &none  &none              &kp RIGHT_SHIFT
-                                  &none         &none         &none         &none         &none    &none  &none  &none  &none  &none
+&bt BT_CLR      &bt BT_SEL 0      &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3  &bt BT_SEL 4                  &none     &none     &none  &none  &none              &none
+&kp TAB         &none             &kp LC(RIGHT)  &none          &none         &none                         &none     &none     &none  &none  &none              &none
+&kp ESC         &kp LEFT_CONTROL  &kp LC(LEFT)   &kp LC(RIGHT)  &kp HOME      &kp END                       &kp LEFT  &kp DOWN  &none  &none  &kp RIGHT_CONTROL  &none
+&kp LEFT_SHIFT  &none             &none          &none          &none         &kp LC(LEFT)  &none    &none  &none     &none     &none  &none  &none              &kp RIGHT_SHIFT
+                                  &none          &none          &none         &none         &none    &none  &none     &none     &none  &none
             >;
         };
 
