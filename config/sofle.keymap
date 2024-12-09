@@ -101,8 +101,8 @@
             >;
 
             sensor-bindings =
-                <&inc_dec_kp LC(LG(RIGHT)) LC(LG(LEFT))>,
-                <&inc_dec_kp LC(LA(RIGHT)) LC(LA(LEFT))>;
+                <&inc_dec_kp LC(LG(LEFT)) LC(LG(RIGHT))>,
+                <&inc_dec_kp LC(LA(LEFT)) LC(LA(RIGHT))>;
         };
 
         numbers,symbols {
@@ -116,7 +116,7 @@
 
             sensor-bindings =
                 <&inc_dec_kp LA(H) LA(L)>,
-                <&inc_dec_kp LA(G) LA(S)>;
+                <&inc_dec_kp LA(S) LA(G)>;
         };
     };
 };
