@@ -55,6 +55,19 @@
             flavor = "balanced";
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 42 50 51 52 53 54>;
         };
+
+        ml: ml {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ML";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <100>;
+            require-prior-idle-ms = <100>;
+            flavor = "balanced";
+            hold-trigger-key-positions = <0 1 2 4 5 6 7 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59>;
+        };
     };
 
     keymap {
@@ -69,24 +82,28 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |        | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4        &kp N5                                      &kp N6     &kp N7        &kp N8     &kp N9   &kp N0    &kp MINUS
-&kp TAB    &kp Q   &kp W   &kp E   &kp R         &kp T                                       &kp Y      &kp U         &kp I      &kp O    &kp P     &kp LEFT_BRACKET
-&kp ESC    &kp A   &kp S   &kp D   &kp F         &kp G                                       &kp H      &kp J         &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z   &kp X   &kp C   &kp V         &kp B      &kp C_MUTE    &ext_power EP_TOG  &kp N      &kp M         &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                   &none   &none   &kp LEFT_WIN  &kp SPACE  &kp RET       &kp BACKSPACE      &kp SPACE  &kp LEFT_ALT  &none      &none
+&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4        &kp N5                                         &kp N6       &kp N7        &kp N8     &kp N9   &kp N0    &kp MINUS
+&kp TAB    &kp Q   &kp W   &kp E   &kp R         &kp T                                          &kp Y        &kp U         &kp I      &kp O    &kp P     &kp LEFT_BRACKET
+&kp ESC    &kp A   &kp S   &kp D   &kp F         &kp G                                          &kp H        &kp J         &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z   &kp X   &kp C   &kp V         &kp B        &kp C_MUTE     &ext_power EP_TOG  &kp N        &kp M         &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+                   &none   &none   &kp LEFT_WIN  &ml 2 SPACE  &ml 1 ENTER    &ml 1 BACKSPACE    &ml 2 SPACE  &kp LEFT_ALT  &none      &none
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp LEFT RIGHT>, <&inc_dec_kp UP DOWN>;
         };
 
         vim_layer {
             bindings = <
-&bt BT_CLR      &bt BT_SEL 0      &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3  &bt BT_SEL 4                  &none     &none     &none  &none  &none              &none
-&kp TAB         &none             &kp LC(RIGHT)  &none          &none         &none                         &none     &none     &none  &none  &none              &none
-&kp ESC         &kp LEFT_CONTROL  &kp LC(LEFT)   &kp LC(RIGHT)  &kp HOME      &kp END                       &kp LEFT  &kp DOWN  &none  &none  &kp RIGHT_CONTROL  &none
-&kp LEFT_SHIFT  &none             &none          &none          &none         &kp LC(LEFT)  &none    &none  &none     &none     &none  &none  &none              &kp RIGHT_SHIFT
-                                  &none          &none          &none         &none         &none    &none  &none     &none     &none  &none
+&bt BT_CLR      &bt BT_SEL 0      &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3  &bt BT_SEL 4                  &none      &none      &none   &none      &none              &none
+&kp TAB         &none             &kp LC(RIGHT)  &none          &none         &none                         &kp LC(C)  &kp LC(Z)  &none   &none      &kp LC(V)          &none
+&kp ESC         &kp LEFT_CONTROL  &kp LC(LEFT)   &kp LC(RIGHT)  &kp HOME      &kp END                       &kp LEFT   &kp DOWN   &kp UP  &kp RIGHT  &kp RIGHT_CONTROL  &none
+&kp LEFT_SHIFT  &none             &none          &none          &none         &kp LC(LEFT)  &none    &none  &none      &none      &none   &none      &none              &kp RIGHT_SHIFT
+                                  &none          &none          &none         &none         &none    &none  &none      &none      &none   &none
             >;
+
+            sensor-bindings =
+                <&inc_dec_kp LC(LG(RIGHT)) LC(LG(LEFT))>,
+                <&inc_dec_kp LC(LA(RIGHT)) LC(LA(LEFT))>;
         };
 
         numbers,symbols {
@@ -97,6 +114,10 @@
 &kp LEFT_SHIFT  &none            &none         &none                 &kp PIPE               &kp AMPERSAND  &none    &none  &none           &kp N1  &kp N2  &kp N3  &kp BACKSLASH  &kp RIGHT_SHIFT
                                  &none         &none                 &none                  &none          &none    &none  &kp N0          &none   &none   &none
             >;
+
+            sensor-bindings =
+                <&inc_dec_kp LA(H) LA(L)>,
+                <&inc_dec_kp LA(G) LA(S)>;
         };
     };
 };
