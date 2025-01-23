@@ -81,16 +81,16 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |        | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp GRAVE  &kp N1               &kp N2              &kp N3            &kp N4        &kp N5                                              &kp N6       &kp N7        &kp N8             &kp N9               &kp N0                        &kp MINUS
-&kp TAB    &kp Q                &kp W               &kp E             &kp R         &kp T                                               &kp Y        &kp U         &kp I              &kp O                &kp P                         &kp LEFT_BRACKET
-&kp ESC    &hml LEFT_CONTROL A  &kp S               &kp D             &kp F         &kp G                                               &kp H        &kp J         &kp K              &kp L                &hmr RIGHT_CONTROL SEMICOLON  &kp SQT
-&kp LSHFT  &kp Z                &kp X               &kp C             &kp V         &kp B        &kp LS(LG(LEFT))    &kp LG(LS(RIGHT))  &kp N        &kp M         &kp COMMA          &kp DOT              &kp FSLH                      &kp RSHFT
-                                &kp LA(LEFT_SHIFT)  &kp LEFT_CONTROL  &kp LEFT_WIN  &lt 2 SPACE  &mo 1               &mo 1              &lt 2 SPACE  &kp LEFT_ALT  &kp RIGHT_CONTROL  &kp RA(RIGHT_SHIFT)
+&kp GRAVE  &kp N1               &kp N2              &kp N3            &kp N4        &kp N5                                              &kp N6       &kp N7           &kp N8             &kp N9               &kp N0                        &kp MINUS
+&kp TAB    &kp Q                &kp W               &kp E             &kp R         &kp T                                               &kp Y        &kp U            &kp I              &kp O                &kp P                         &kp LEFT_BRACKET
+&kp ESC    &hml LEFT_CONTROL A  &kp S               &kp D             &kp F         &kp G                                               &kp H        &hmr LEFT_ALT J  &kp K              &kp L                &hmr RIGHT_CONTROL SEMICOLON  &kp SQT
+&kp LSHFT  &kp Z                &kp X               &kp C             &kp V         &kp B        &kp LS(LG(LEFT))    &kp LG(LS(RIGHT))  &kp N        &kp M            &kp COMMA          &kp DOT              &kp FSLH                      &kp RSHFT
+                                &kp LA(LEFT_SHIFT)  &kp LEFT_CONTROL  &kp LEFT_WIN  &lt 2 SPACE  &mo 1               &mo 1              &lt 2 SPACE  &kp LEFT_ALT     &kp RIGHT_CONTROL  &kp RA(RIGHT_SHIFT)
             >;
 
             sensor-bindings =
-                <&inc_dec_kp LA(H) LA(L)>,
-                <&inc_dec_kp LA(S) LA(G)>;
+                <&inc_dec_kp C_VOL_DN C_VOLUME_UP>,
+                <&inc_dec_kp C_BRIGHTNESS_DEC C_BRIGHTNESS_INC>;
         };
 
         vim_layer {
@@ -109,11 +109,11 @@
 
         numbers,symbols {
             bindings = <
-&none           &none            &none         &none                 &none                  &none                                      &none           &none   &none   &none   &none          &none
-&kp GRAVE       &kp EXCLAMATION  &kp AT_SIGN   &kp HASH              &kp DOLLAR             &kp PERCENT                                &none           &kp N7  &kp N8  &kp N9  &kp MINUS      &kp RIGHT_BRACKET
-&none           &kp CAPSLOCK     &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp CARET                                  &kp UNDERSCORE  &kp N4  &kp N5  &kp N6  &kp PLUS       &kp EQUAL
-&kp LEFT_SHIFT  &none            &none         &none                 &kp PIPE               &kp AMPERSAND  &kp K_MUTE       &none      &none           &kp N1  &kp N2  &kp N3  &kp BACKSLASH  &kp RIGHT_SHIFT
-                                 &none         &none                 &none                  &none          &kp BACKSPACE    &kp ENTER  &kp N0          &none   &none   &none
+&none           &none             &none              &none                 &none                  &none                                      &none           &none   &none   &none   &none          &none
+&kp GRAVE       &kp EXCLAMATION   &kp AT_SIGN        &kp HASH              &kp DOLLAR             &kp PERCENT                                &none           &kp N7  &kp N8  &kp N9  &kp MINUS      &kp RIGHT_BRACKET
+&kp CAPSLOCK    &none             &kp ASTERISK       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp CARET                                  &kp UNDERSCORE  &kp N4  &kp N5  &kp N6  &kp PLUS       &kp EQUAL
+&kp LEFT_SHIFT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp AMPERSAND  &kp K_MUTE       &none      &kp PIPE        &kp N1  &kp N2  &kp N3  &kp BACKSLASH  &kp RIGHT_SHIFT
+                                  &none              &none                 &none                  &none          &kp BACKSPACE    &kp ENTER  &kp N0          &none   &none   &none
             >;
 
             sensor-bindings =
